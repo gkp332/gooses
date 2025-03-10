@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silly goose</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #191970; /* Midnight Blue */
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      padding: 10px;
+      background-color: red; /* Lava Red */
+      color: white;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 15px orange;
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .flip-card {
+      width: 250px;
+      height: 350px;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      border-radius: 10px;
+      position: relative;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .flip-card-back {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      transform: rotateY(180deg);
+    }
+    .change-text-btn {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background-color: orange;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Silly GOOSES and their own stories</h1>
+  <div class="image-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="goose.jpg" alt="Image 1">
+        </div>
+        <div class="flip-card-back">
+          <p class="back-text">1️⃣ The Bread Bandit
+            "Gary the goose had one mission: steal bread. Every morning, he waited near the pond, eyeing picnickers. One day, he grabbed a whole baguette and ran—only to trip over his own feet. The ducks laughed. Gary, covered in crumbs, just honked in victory."</p>
+        </div>
+      </div>
+    
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="goose.2.jpg" alt="Image 2">
+        </div>
+        <div class="flip-card-back">
+          <p class="back-text">2️⃣ The Honk-Off Champion
+            "Steve the goose challenged a human to a honk-off. The human tried their best, but Steve’s honks were so loud, car alarms went off. The human admitted defeat. Steve strutted away, knowing he was now a legend."</p>
+        </div>
+      </div>
+     
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="silliy goose.3.jpg" alt="Image 3">
+        </div>
+        <div class="flip-card-back">
+          <p class="back-text">3️⃣ Goose Van Honkh
+            "Leonardo the goose saw a human painting and got inspired. He grabbed a brush, dipped it in mud, and started ‘painting’ on a barn wall. The farmer called it a mess. The other geese called it ‘modern art.’ Leonardo honked proudly—true artists are never understood in their time."</p>
+        </div>
+      </div>
+    
+    </div>
+    
+  </div>
+  <script>
+    function changeText(index) {
+      let newText = prompt("Enter new text:");
+      if (newText) {
+        document.querySelectorAll(".back-text")[index].textContent = newText;
+      }
+    }
+  </script>
+</body>
+</html>
